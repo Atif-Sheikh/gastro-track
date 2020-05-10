@@ -69,6 +69,7 @@ export default class InputNumber extends Component {
                         ref={ref => {
                             this.phone = ref;
                         }}
+                        initialCountry="ch"
                     />
                 </View>
                     {/* {this.renderInfo()} */}

@@ -31,11 +31,10 @@ export class Navigation extends Component {
         }, 500);
     }
     render() {
-        console.log(this.state.phoneNo,this.state.code,'n000000000000000')
         const Stack = createStackNavigator();
         return (
             <NavigationContainer >
-                <Stack.Navigator initialRouteName="InputNumber" screenOptions={{
+                <Stack.Navigator initialRouteName="Home" screenOptions={{
                     headerShown: false
                 }}>
                     <Stack.Screen name="QRscaner">

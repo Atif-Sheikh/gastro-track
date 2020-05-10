@@ -1,12 +1,10 @@
-'use strict';
-
 import React, { Component } from 'react';
 
 import {
   AppRegistry,
   StyleSheet,
   Text,
-  TouchableOpacity,
+  Platform,
   Linking
 } from 'react-native';
 
@@ -24,10 +22,19 @@ class ScanScreen extends Component {
   };
 
   render() {
+
+    let checkAndroidPermission = true
+    if (Platform.OS === 'android' && Platform.Version < 23) {
+      checkAndroidPermission = false
+    }
+
+
     return (
       <QRCodeScanner
         onRead={this.onSuccess}
+        cameraProps={{ captureAudio: false }}
         flashMode={RNCamera.Constants.FlashMode.auto}
+        checkAndroid6Permissions={checkAndroidPermission}
         // topContent={
         //   <Text style={styles.centerText}>
         //     Go to{' '}
